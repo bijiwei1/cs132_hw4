@@ -1,0 +1,797 @@
+const empty_Element
+const empty_List
+const empty_LL
+
+func Main[in 0, out 1, local 1]
+$t0 = :empty_LL
+out[0] = $t0
+$t1 = :LL.Start
+call $t1
+local[0] = $v0
+$t1 = local[0]
+PrintIntS($t1)
+ret
+
+func Element.Init[in 4, out 0, local 0]
+$t0 = in[0]
+$t1 = in[1]
+[$t0] = $t1
+$t0 = in[0]
+$t1 = in[2]
+[$t0+4] = $t1
+$t0 = in[0]
+$t1 = in[3]
+[$t0+8] = $t1
+$v0 = 1
+ret
+
+func Element.GetAge[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func Element.GetSalary[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0+4]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func Element.GetMarried[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0+8]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func Element.Equal[in 2, out 3, local 11]
+$t0 = 1
+local[0] = $t0
+$t0 = in[1]
+if $t0 goto :null1
+Error("null pointer")
+null1: 
+$t0 = in[1]
+out[0] = $t0
+$t1 = :Element.GetAge
+call $t1
+local[1] = $v0
+$t0 = in[0]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = in[0]
+out[0] = $t0
+$t0 = local[1]
+out[1] = $t0
+$t0 = local[2]
+out[2] = $t0
+$t1 = :Element.Compare
+call $t1
+local[3] = $v0
+$t0 = local[3]
+if $t0 goto :if1_else
+$t0 = 0
+local[0] = $t0
+goto :if1_end
+if1_else: 
+$t0 = in[1]
+if $t0 goto :null2
+Error("null pointer")
+null2: 
+$t0 = in[1]
+out[0] = $t0
+$t1 = :Element.GetSalary
+call $t1
+local[4] = $v0
+$t0 = in[0]
+$t1 = [$t0+4]
+local[5] = $t1
+$t0 = in[0]
+out[0] = $t0
+$t0 = local[4]
+out[1] = $t0
+$t0 = local[5]
+out[2] = $t0
+$t1 = :Element.Compare
+call $t1
+local[6] = $v0
+$t0 = local[6]
+if $t0 goto :if2_else
+$t0 = 0
+local[0] = $t0
+goto :if2_end
+if2_else: 
+$t0 = in[0]
+$t1 = [$t0+8]
+local[7] = $t1
+$t0 = local[7]
+if0 $t0 goto :if3_else
+$t0 = in[1]
+if $t0 goto :null3
+Error("null pointer")
+null3: 
+$t0 = in[1]
+out[0] = $t0
+$t1 = :Element.GetMarried
+call $t1
+local[8] = $v0
+$t0 = local[8]
+if $t0 goto :if4_else
+$t0 = 0
+local[0] = $t0
+goto :if4_end
+if4_else: 
+$t0 = 0
+local[9] = $t0
+if4_end: 
+goto :if3_end
+if3_else: 
+$t0 = in[1]
+if $t0 goto :null4
+Error("null pointer")
+null4: 
+$t0 = in[1]
+out[0] = $t0
+$t1 = :Element.GetMarried
+call $t1
+local[10] = $v0
+$t0 = local[10]
+if0 $t0 goto :if5_else
+$t0 = 0
+local[0] = $t0
+goto :if5_end
+if5_else: 
+$t0 = 0
+local[9] = $t0
+if5_end: 
+if3_end: 
+if2_end: 
+if1_end: 
+$v0 = local[0]
+ret
+
+func Element.Compare[in 3, out 0, local 4]
+$t0 = 0
+local[0] = $t0
+$t1 = in[2]
+$t0 = Add($t1 1)
+local[1] = $t0
+$t1 = in[1]
+$t2 = in[2]
+$t0 = LtS($t1 $t2)
+local[2] = $t0
+$t0 = local[2]
+if0 $t0 goto :if6_else
+$t0 = 0
+local[0] = $t0
+goto :if6_end
+if6_else: 
+$t1 = in[1]
+$t2 = local[1]
+$t0 = LtS($t1 $t2)
+local[3] = $t0
+$t0 = local[3]
+if $t0 goto :if7_else
+$t0 = 0
+local[0] = $t0
+goto :if7_end
+if7_else: 
+$t0 = 1
+local[0] = $t0
+if7_end: 
+if6_end: 
+$v0 = local[0]
+ret
+
+func List.Init[in 1, out 0, local 0]
+$t0 = in[0]
+$t1 = 1
+[$t0+8] = $t1
+$v0 = 1
+ret
+
+func List.InitNew[in 4, out 0, local 0]
+$t0 = in[0]
+$t1 = in[3]
+[$t0+8] = $t1
+$t0 = in[0]
+$t1 = in[1]
+[$t0] = $t1
+$t0 = in[0]
+$t1 = in[2]
+[$t0+4] = $t1
+$v0 = 1
+ret
+
+func List.Insert[in 2, out 4, local 3]
+$t0 = in[0]
+local[0] = $t0
+$t0 = HeapAllocZ(12)
+local[1] = $t0
+$t0 = local[1]
+if $t0 goto :null5
+Error("null pointer")
+null5: 
+$t0 = local[1]
+out[0] = $t0
+$t0 = in[1]
+out[1] = $t0
+$t0 = local[0]
+out[2] = $t0
+$t0 = 0
+out[3] = $t0
+$t1 = :List.InitNew
+call $t1
+local[2] = $v0
+$v0 = local[1]
+ret
+
+func List.SetNext[in 2, out 0, local 0]
+$t0 = in[0]
+$t1 = in[1]
+[$t0+4] = $t1
+$v0 = 1
+ret
+
+func List.Delete[in 2, out 2, local 15]
+$t0 = in[0]
+local[0] = $t0
+$t0 = 0
+local[1] = $t0
+$t0 = Sub(0 1)
+local[2] = $t0
+$t0 = in[0]
+local[3] = $t0
+$t0 = in[0]
+local[4] = $t0
+$t0 = in[0]
+$t1 = [$t0+8]
+local[5] = $t1
+$t0 = in[0]
+$t1 = [$t0]
+local[6] = $t1
+while1_top: 
+$t0 = local[5]
+if $t0 goto :ss1_else
+$t1 = local[1]
+$t0 = Sub(1 $t1)
+local[7] = $t0
+goto :ss1_end
+ss1_else: 
+$t0 = 0
+local[7] = $t0
+ss1_end: 
+$t0 = local[7]
+if0 $t0 goto :while1_end
+$t0 = in[1]
+if $t0 goto :null6
+Error("null pointer")
+null6: 
+$t0 = in[1]
+out[0] = $t0
+$t0 = local[6]
+out[1] = $t0
+$t1 = :Element.Equal
+call $t1
+local[8] = $v0
+$t0 = local[8]
+if0 $t0 goto :if8_else
+$t0 = 1
+local[1] = $t0
+$t1 = local[2]
+$t0 = LtS($t1 0)
+local[9] = $t0
+$t0 = local[9]
+if0 $t0 goto :if9_else
+$t0 = local[3]
+if $t0 goto :null7
+Error("null pointer")
+null7: 
+$t0 = local[3]
+out[0] = $t0
+$t1 = :List.GetNext
+call $t1
+local[0] = $v0
+goto :if9_end
+if9_else: 
+$t0 = Sub(0 555)
+local[10] = $t0
+$t1 = local[10]
+PrintIntS($t1)
+$t0 = local[4]
+if $t0 goto :null8
+Error("null pointer")
+null8: 
+$t0 = local[3]
+if $t0 goto :null9
+Error("null pointer")
+null9: 
+$t0 = local[3]
+out[0] = $t0
+$t1 = :List.GetNext
+call $t1
+local[11] = $v0
+$t0 = local[4]
+out[0] = $t0
+$t0 = local[11]
+out[1] = $t0
+$t1 = :List.SetNext
+call $t1
+local[12] = $v0
+$t0 = Sub(0 555)
+local[13] = $t0
+$t1 = local[13]
+PrintIntS($t1)
+if9_end: 
+goto :if8_end
+if8_else: 
+$t0 = 0
+local[14] = $t0
+if8_end: 
+$t0 = local[1]
+if $t0 goto :if10_else
+$t0 = local[3]
+local[4] = $t0
+$t0 = local[3]
+if $t0 goto :null10
+Error("null pointer")
+null10: 
+$t0 = local[3]
+out[0] = $t0
+$t1 = :List.GetNext
+call $t1
+local[3] = $v0
+$t0 = local[3]
+if $t0 goto :null11
+Error("null pointer")
+null11: 
+$t0 = local[3]
+out[0] = $t0
+$t1 = :List.GetEnd
+call $t1
+local[5] = $v0
+$t0 = local[3]
+if $t0 goto :null12
+Error("null pointer")
+null12: 
+$t0 = local[3]
+out[0] = $t0
+$t1 = :List.GetElem
+call $t1
+local[6] = $v0
+$t0 = 1
+local[2] = $t0
+goto :if10_end
+if10_else: 
+$t0 = 0
+local[14] = $t0
+if10_end: 
+goto :while1_top
+while1_end: 
+$v0 = local[0]
+ret
+
+func List.Search[in 2, out 2, local 7]
+$t0 = 0
+local[0] = $t0
+$t0 = in[0]
+local[1] = $t0
+$t0 = in[0]
+$t1 = [$t0+8]
+local[2] = $t1
+$t0 = in[0]
+$t1 = [$t0]
+local[3] = $t1
+while2_top: 
+$t1 = local[2]
+$t0 = Sub(1 $t1)
+local[4] = $t0
+$t0 = local[4]
+if0 $t0 goto :while2_end
+$t0 = in[1]
+if $t0 goto :null13
+Error("null pointer")
+null13: 
+$t0 = in[1]
+out[0] = $t0
+$t0 = local[3]
+out[1] = $t0
+$t1 = :Element.Equal
+call $t1
+local[5] = $v0
+$t0 = local[5]
+if0 $t0 goto :if11_else
+$t0 = 1
+local[0] = $t0
+goto :if11_end
+if11_else: 
+$t0 = 0
+local[6] = $t0
+if11_end: 
+$t0 = local[1]
+if $t0 goto :null14
+Error("null pointer")
+null14: 
+$t0 = local[1]
+out[0] = $t0
+$t1 = :List.GetNext
+call $t1
+local[1] = $v0
+$t0 = local[1]
+if $t0 goto :null15
+Error("null pointer")
+null15: 
+$t0 = local[1]
+out[0] = $t0
+$t1 = :List.GetEnd
+call $t1
+local[2] = $v0
+$t0 = local[1]
+if $t0 goto :null16
+Error("null pointer")
+null16: 
+$t0 = local[1]
+out[0] = $t0
+$t1 = :List.GetElem
+call $t1
+local[3] = $v0
+goto :while2_top
+while2_end: 
+$v0 = local[0]
+ret
+
+func List.GetEnd[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0+8]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func List.GetElem[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func List.GetNext[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0+4]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func List.Print[in 1, out 1, local 5]
+$t0 = in[0]
+local[0] = $t0
+$t0 = in[0]
+$t1 = [$t0+8]
+local[1] = $t1
+$t0 = in[0]
+$t1 = [$t0]
+local[2] = $t1
+while3_top: 
+$t1 = local[1]
+$t0 = Sub(1 $t1)
+local[3] = $t0
+$t0 = local[3]
+if0 $t0 goto :while3_end
+$t0 = local[2]
+if $t0 goto :null17
+Error("null pointer")
+null17: 
+$t0 = local[2]
+out[0] = $t0
+$t1 = :Element.GetAge
+call $t1
+local[4] = $v0
+$t1 = local[4]
+PrintIntS($t1)
+$t0 = local[0]
+if $t0 goto :null18
+Error("null pointer")
+null18: 
+$t0 = local[0]
+out[0] = $t0
+$t1 = :List.GetNext
+call $t1
+local[0] = $v0
+$t0 = local[0]
+if $t0 goto :null19
+Error("null pointer")
+null19: 
+$t0 = local[0]
+out[0] = $t0
+$t1 = :List.GetEnd
+call $t1
+local[1] = $v0
+$t0 = local[0]
+if $t0 goto :null20
+Error("null pointer")
+null20: 
+$t0 = local[0]
+out[0] = $t0
+$t1 = :List.GetElem
+call $t1
+local[2] = $v0
+goto :while3_top
+while3_end: 
+$v0 = 1
+ret
+
+func LL.Start[in 1, out 4, local 8]
+$t0 = HeapAllocZ(12)
+local[0] = $t0
+$t0 = local[0]
+if $t0 goto :null21
+Error("null pointer")
+null21: 
+$t0 = local[0]
+out[0] = $t0
+$t1 = :List.Init
+call $t1
+local[1] = $v0
+$t0 = local[0]
+local[2] = $t0
+$t0 = local[2]
+if $t0 goto :null22
+Error("null pointer")
+null22: 
+$t0 = local[2]
+out[0] = $t0
+$t1 = :List.Init
+call $t1
+local[1] = $v0
+$t0 = local[2]
+if $t0 goto :null23
+Error("null pointer")
+null23: 
+$t0 = local[2]
+out[0] = $t0
+$t1 = :List.Print
+call $t1
+local[1] = $v0
+$t0 = HeapAllocZ(12)
+local[3] = $t0
+$t0 = local[3]
+if $t0 goto :null24
+Error("null pointer")
+null24: 
+$t0 = local[3]
+out[0] = $t0
+$t0 = 25
+out[1] = $t0
+$t0 = 37000
+out[2] = $t0
+$t0 = 0
+out[3] = $t0
+$t1 = :Element.Init
+call $t1
+local[1] = $v0
+$t0 = local[2]
+if $t0 goto :null25
+Error("null pointer")
+null25: 
+$t0 = local[2]
+out[0] = $t0
+$t0 = local[3]
+out[1] = $t0
+$t1 = :List.Insert
+call $t1
+local[2] = $v0
+$t0 = local[2]
+if $t0 goto :null26
+Error("null pointer")
+null26: 
+$t0 = local[2]
+out[0] = $t0
+$t1 = :List.Print
+call $t1
+local[1] = $v0
+PrintIntS(10000000)
+$t0 = HeapAllocZ(12)
+local[3] = $t0
+$t0 = local[3]
+if $t0 goto :null27
+Error("null pointer")
+null27: 
+$t0 = local[3]
+out[0] = $t0
+$t0 = 39
+out[1] = $t0
+$t0 = 42000
+out[2] = $t0
+$t0 = 1
+out[3] = $t0
+$t1 = :Element.Init
+call $t1
+local[1] = $v0
+$t0 = local[3]
+local[4] = $t0
+$t0 = local[2]
+if $t0 goto :null28
+Error("null pointer")
+null28: 
+$t0 = local[2]
+out[0] = $t0
+$t0 = local[3]
+out[1] = $t0
+$t1 = :List.Insert
+call $t1
+local[2] = $v0
+$t0 = local[2]
+if $t0 goto :null29
+Error("null pointer")
+null29: 
+$t0 = local[2]
+out[0] = $t0
+$t1 = :List.Print
+call $t1
+local[1] = $v0
+PrintIntS(10000000)
+$t0 = HeapAllocZ(12)
+local[3] = $t0
+$t0 = local[3]
+if $t0 goto :null30
+Error("null pointer")
+null30: 
+$t0 = local[3]
+out[0] = $t0
+$t0 = 22
+out[1] = $t0
+$t0 = 34000
+out[2] = $t0
+$t0 = 0
+out[3] = $t0
+$t1 = :Element.Init
+call $t1
+local[1] = $v0
+$t0 = local[2]
+if $t0 goto :null31
+Error("null pointer")
+null31: 
+$t0 = local[2]
+out[0] = $t0
+$t0 = local[3]
+out[1] = $t0
+$t1 = :List.Insert
+call $t1
+local[2] = $v0
+$t0 = local[2]
+if $t0 goto :null32
+Error("null pointer")
+null32: 
+$t0 = local[2]
+out[0] = $t0
+$t1 = :List.Print
+call $t1
+local[1] = $v0
+$t0 = HeapAllocZ(12)
+local[5] = $t0
+$t0 = local[5]
+if $t0 goto :null33
+Error("null pointer")
+null33: 
+$t0 = local[5]
+out[0] = $t0
+$t0 = 27
+out[1] = $t0
+$t0 = 34000
+out[2] = $t0
+$t0 = 0
+out[3] = $t0
+$t1 = :Element.Init
+call $t1
+local[1] = $v0
+$t0 = local[2]
+if $t0 goto :null34
+Error("null pointer")
+null34: 
+$t0 = local[2]
+out[0] = $t0
+$t0 = local[4]
+out[1] = $t0
+$t1 = :List.Search
+call $t1
+local[6] = $v0
+$t1 = local[6]
+PrintIntS($t1)
+$t0 = local[2]
+if $t0 goto :null35
+Error("null pointer")
+null35: 
+$t0 = local[2]
+out[0] = $t0
+$t0 = local[5]
+out[1] = $t0
+$t1 = :List.Search
+call $t1
+local[7] = $v0
+$t1 = local[7]
+PrintIntS($t1)
+PrintIntS(10000000)
+$t0 = HeapAllocZ(12)
+local[3] = $t0
+$t0 = local[3]
+if $t0 goto :null36
+Error("null pointer")
+null36: 
+$t0 = local[3]
+out[0] = $t0
+$t0 = 28
+out[1] = $t0
+$t0 = 35000
+out[2] = $t0
+$t0 = 0
+out[3] = $t0
+$t1 = :Element.Init
+call $t1
+local[1] = $v0
+$t0 = local[2]
+if $t0 goto :null37
+Error("null pointer")
+null37: 
+$t0 = local[2]
+out[0] = $t0
+$t0 = local[3]
+out[1] = $t0
+$t1 = :List.Insert
+call $t1
+local[2] = $v0
+$t0 = local[2]
+if $t0 goto :null38
+Error("null pointer")
+null38: 
+$t0 = local[2]
+out[0] = $t0
+$t1 = :List.Print
+call $t1
+local[1] = $v0
+PrintIntS(2220000)
+$t0 = local[2]
+if $t0 goto :null39
+Error("null pointer")
+null39: 
+$t0 = local[2]
+out[0] = $t0
+$t0 = local[4]
+out[1] = $t0
+$t1 = :List.Delete
+call $t1
+local[2] = $v0
+$t0 = local[2]
+if $t0 goto :null40
+Error("null pointer")
+null40: 
+$t0 = local[2]
+out[0] = $t0
+$t1 = :List.Print
+call $t1
+local[1] = $v0
+PrintIntS(33300000)
+$t0 = local[2]
+if $t0 goto :null41
+Error("null pointer")
+null41: 
+$t0 = local[2]
+out[0] = $t0
+$t0 = local[3]
+out[1] = $t0
+$t1 = :List.Delete
+call $t1
+local[2] = $v0
+$t0 = local[2]
+if $t0 goto :null42
+Error("null pointer")
+null42: 
+$t0 = local[2]
+out[0] = $t0
+$t1 = :List.Print
+call $t1
+local[1] = $v0
+PrintIntS(44440000)
+$v0 = 0
+ret
+

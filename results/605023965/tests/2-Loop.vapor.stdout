@@ -1,0 +1,19 @@
+
+func Main[in 0, out 0, local 2]
+$t0 = 1
+local[0] = $t0
+goto :end
+begin: 
+$t1 = local[0]
+PrintIntS($t1)
+$t1 = local[0]
+$t0 = MulS($t1 2)
+local[0] = $t0
+end: 
+$t1 = local[0]
+$t0 = LtS($t1 100)
+local[1] = $t0
+$t0 = local[1]
+if $t0 goto :begin
+ret
+

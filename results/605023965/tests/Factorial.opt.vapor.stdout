@@ -1,0 +1,42 @@
+const empty_Fac
+
+func Main[in 0, out 2, local 1]
+$t0 = :empty_Fac
+out[0] = $t0
+$t0 = 10
+out[1] = $t0
+$t1 = :Fac.ComputeFac
+call $t1
+local[0] = $v0
+$t1 = local[0]
+PrintIntS($t1)
+ret
+
+func Fac.ComputeFac[in 2, out 2, local 4]
+$t1 = in[1]
+$t0 = LtS($t1 1)
+local[0] = $t0
+$t0 = local[0]
+if0 $t0 goto :if1_else
+$t0 = 1
+local[1] = $t0
+goto :if1_end
+if1_else: 
+$t1 = in[1]
+$t0 = Sub($t1 1)
+local[2] = $t0
+$t0 = in[0]
+out[0] = $t0
+$t0 = local[2]
+out[1] = $t0
+$t1 = :Fac.ComputeFac
+call $t1
+local[3] = $v0
+$t1 = in[1]
+$t2 = local[3]
+$t0 = MulS($t1 $t2)
+local[1] = $t0
+if1_end: 
+$v0 = local[1]
+ret
+

@@ -1,0 +1,1964 @@
+const vmt_TV
+  :TV.Start
+const vmt_Tree
+  :Tree.Init
+  :Tree.SetRight
+  :Tree.SetLeft
+  :Tree.GetRight
+  :Tree.GetLeft
+  :Tree.GetKey
+  :Tree.SetKey
+  :Tree.GetHas_Right
+  :Tree.GetHas_Left
+  :Tree.SetHas_Left
+  :Tree.SetHas_Right
+  :Tree.Compare
+  :Tree.Insert
+  :Tree.Delete
+  :Tree.Remove
+  :Tree.RemoveRight
+  :Tree.RemoveLeft
+  :Tree.Search
+  :Tree.Print
+  :Tree.RecPrint
+  :Tree.accept
+const vmt_Visitor
+  :Visitor.visit
+const vmt_MyVisitor
+  :MyVisitor.visit
+
+func Main[in 0, out 1, local 3]
+$t0 = HeapAllocZ(4)
+local[0] = $t0
+$t0 = local[0]
+$t1 = :vmt_TV
+[$t0] = $t1
+$t0 = local[0]
+if $t0 goto :null1
+Error("null pointer")
+null1: 
+$t0 = local[0]
+$t1 = [$t0]
+local[1] = $t1
+$t0 = local[1]
+$t1 = [$t0]
+local[1] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[1]
+call $t1
+local[2] = $v0
+$t1 = local[2]
+PrintIntS($t1)
+ret
+
+func TV.Start[in 1, out 2, local 31]
+$t0 = HeapAllocZ(28)
+local[0] = $t0
+$t0 = local[0]
+$t1 = :vmt_Tree
+[$t0] = $t1
+$t0 = local[0]
+local[1] = $t0
+$t0 = local[1]
+if $t0 goto :null2
+Error("null pointer")
+null2: 
+$t0 = local[1]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[2]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 16
+out[1] = $t0
+$t1 = local[2]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null3
+Error("null pointer")
+null3: 
+$t0 = local[1]
+$t1 = [$t0]
+local[4] = $t1
+$t0 = local[4]
+$t1 = [$t0+72]
+local[4] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t1 = local[4]
+call $t1
+local[3] = $v0
+PrintIntS(100000000)
+$t0 = local[1]
+if $t0 goto :null4
+Error("null pointer")
+null4: 
+$t0 = local[1]
+$t1 = [$t0]
+local[5] = $t1
+$t0 = local[5]
+$t1 = [$t0+48]
+local[5] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 8
+out[1] = $t0
+$t1 = local[5]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null5
+Error("null pointer")
+null5: 
+$t0 = local[1]
+$t1 = [$t0]
+local[6] = $t1
+$t0 = local[6]
+$t1 = [$t0+48]
+local[6] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 24
+out[1] = $t0
+$t1 = local[6]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null6
+Error("null pointer")
+null6: 
+$t0 = local[1]
+$t1 = [$t0]
+local[7] = $t1
+$t0 = local[7]
+$t1 = [$t0+48]
+local[7] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 4
+out[1] = $t0
+$t1 = local[7]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null7
+Error("null pointer")
+null7: 
+$t0 = local[1]
+$t1 = [$t0]
+local[8] = $t1
+$t0 = local[8]
+$t1 = [$t0+48]
+local[8] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 12
+out[1] = $t0
+$t1 = local[8]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null8
+Error("null pointer")
+null8: 
+$t0 = local[1]
+$t1 = [$t0]
+local[9] = $t1
+$t0 = local[9]
+$t1 = [$t0+48]
+local[9] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 20
+out[1] = $t0
+$t1 = local[9]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null9
+Error("null pointer")
+null9: 
+$t0 = local[1]
+$t1 = [$t0]
+local[10] = $t1
+$t0 = local[10]
+$t1 = [$t0+48]
+local[10] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 28
+out[1] = $t0
+$t1 = local[10]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null10
+Error("null pointer")
+null10: 
+$t0 = local[1]
+$t1 = [$t0]
+local[11] = $t1
+$t0 = local[11]
+$t1 = [$t0+48]
+local[11] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 14
+out[1] = $t0
+$t1 = local[11]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null11
+Error("null pointer")
+null11: 
+$t0 = local[1]
+$t1 = [$t0]
+local[12] = $t1
+$t0 = local[12]
+$t1 = [$t0+72]
+local[12] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t1 = local[12]
+call $t1
+local[3] = $v0
+PrintIntS(100000000)
+$t0 = HeapAllocZ(12)
+local[13] = $t0
+$t0 = local[13]
+$t1 = :vmt_MyVisitor
+[$t0] = $t1
+$t0 = local[13]
+local[14] = $t0
+PrintIntS(50000000)
+$t0 = local[1]
+if $t0 goto :null12
+Error("null pointer")
+null12: 
+$t0 = local[1]
+$t1 = [$t0]
+local[15] = $t1
+$t0 = local[15]
+$t1 = [$t0+80]
+local[15] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = local[14]
+out[1] = $t0
+$t1 = local[15]
+call $t1
+local[16] = $v0
+PrintIntS(100000000)
+$t0 = local[1]
+if $t0 goto :null13
+Error("null pointer")
+null13: 
+$t0 = local[1]
+$t1 = [$t0]
+local[17] = $t1
+$t0 = local[17]
+$t1 = [$t0+68]
+local[17] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 24
+out[1] = $t0
+$t1 = local[17]
+call $t1
+local[18] = $v0
+$t1 = local[18]
+PrintIntS($t1)
+$t0 = local[1]
+if $t0 goto :null14
+Error("null pointer")
+null14: 
+$t0 = local[1]
+$t1 = [$t0]
+local[19] = $t1
+$t0 = local[19]
+$t1 = [$t0+68]
+local[19] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 12
+out[1] = $t0
+$t1 = local[19]
+call $t1
+local[20] = $v0
+$t1 = local[20]
+PrintIntS($t1)
+$t0 = local[1]
+if $t0 goto :null15
+Error("null pointer")
+null15: 
+$t0 = local[1]
+$t1 = [$t0]
+local[21] = $t1
+$t0 = local[21]
+$t1 = [$t0+68]
+local[21] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 16
+out[1] = $t0
+$t1 = local[21]
+call $t1
+local[22] = $v0
+$t1 = local[22]
+PrintIntS($t1)
+$t0 = local[1]
+if $t0 goto :null16
+Error("null pointer")
+null16: 
+$t0 = local[1]
+$t1 = [$t0]
+local[23] = $t1
+$t0 = local[23]
+$t1 = [$t0+68]
+local[23] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 50
+out[1] = $t0
+$t1 = local[23]
+call $t1
+local[24] = $v0
+$t1 = local[24]
+PrintIntS($t1)
+$t0 = local[1]
+if $t0 goto :null17
+Error("null pointer")
+null17: 
+$t0 = local[1]
+$t1 = [$t0]
+local[25] = $t1
+$t0 = local[25]
+$t1 = [$t0+68]
+local[25] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 12
+out[1] = $t0
+$t1 = local[25]
+call $t1
+local[26] = $v0
+$t1 = local[26]
+PrintIntS($t1)
+$t0 = local[1]
+if $t0 goto :null18
+Error("null pointer")
+null18: 
+$t0 = local[1]
+$t1 = [$t0]
+local[27] = $t1
+$t0 = local[27]
+$t1 = [$t0+52]
+local[27] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 12
+out[1] = $t0
+$t1 = local[27]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null19
+Error("null pointer")
+null19: 
+$t0 = local[1]
+$t1 = [$t0]
+local[28] = $t1
+$t0 = local[28]
+$t1 = [$t0+72]
+local[28] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t1 = local[28]
+call $t1
+local[3] = $v0
+$t0 = local[1]
+if $t0 goto :null20
+Error("null pointer")
+null20: 
+$t0 = local[1]
+$t1 = [$t0]
+local[29] = $t1
+$t0 = local[29]
+$t1 = [$t0+68]
+local[29] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = 12
+out[1] = $t0
+$t1 = local[29]
+call $t1
+local[30] = $v0
+$t1 = local[30]
+PrintIntS($t1)
+$v0 = 0
+ret
+
+func Tree.Init[in 2, out 0, local 0]
+$t0 = in[0]
+$t1 = in[1]
+[$t0+12] = $t1
+$t0 = in[0]
+$t1 = 0
+[$t0+16] = $t1
+$t0 = in[0]
+$t1 = 0
+[$t0+20] = $t1
+$v0 = 1
+ret
+
+func Tree.SetRight[in 2, out 0, local 0]
+$t0 = in[0]
+$t1 = in[1]
+[$t0+8] = $t1
+$v0 = 1
+ret
+
+func Tree.SetLeft[in 2, out 0, local 0]
+$t0 = in[0]
+$t1 = in[1]
+[$t0+4] = $t1
+$v0 = 1
+ret
+
+func Tree.GetRight[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0+8]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func Tree.GetLeft[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0+4]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func Tree.GetKey[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0+12]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func Tree.SetKey[in 2, out 0, local 0]
+$t0 = in[0]
+$t1 = in[1]
+[$t0+12] = $t1
+$v0 = 1
+ret
+
+func Tree.GetHas_Right[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0+20]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func Tree.GetHas_Left[in 1, out 0, local 1]
+$t0 = in[0]
+$t1 = [$t0+16]
+local[0] = $t1
+$v0 = local[0]
+ret
+
+func Tree.SetHas_Left[in 2, out 0, local 0]
+$t0 = in[0]
+$t1 = in[1]
+[$t0+16] = $t1
+$v0 = 1
+ret
+
+func Tree.SetHas_Right[in 2, out 0, local 0]
+$t0 = in[0]
+$t1 = in[1]
+[$t0+20] = $t1
+$v0 = 1
+ret
+
+func Tree.Compare[in 3, out 0, local 5]
+$t0 = 0
+local[0] = $t0
+$t1 = in[2]
+$t0 = Add($t1 1)
+local[1] = $t0
+$t1 = in[1]
+$t2 = in[2]
+$t0 = LtS($t1 $t2)
+local[2] = $t0
+$t0 = local[2]
+if0 $t0 goto :if1_else
+$t0 = 0
+local[0] = $t0
+goto :if1_end
+if1_else: 
+$t1 = in[1]
+$t2 = local[1]
+$t0 = LtS($t1 $t2)
+local[3] = $t0
+$t1 = local[3]
+$t0 = Sub(1 $t1)
+local[4] = $t0
+$t0 = local[4]
+if0 $t0 goto :if2_else
+$t0 = 0
+local[0] = $t0
+goto :if2_end
+if2_else: 
+$t0 = 1
+local[0] = $t0
+if2_end: 
+if1_end: 
+$v0 = local[0]
+ret
+
+func Tree.Insert[in 2, out 2, local 19]
+$t0 = HeapAllocZ(28)
+local[0] = $t0
+$t0 = local[0]
+$t1 = :vmt_Tree
+[$t0] = $t1
+$t0 = local[0]
+local[1] = $t0
+$t0 = local[1]
+if $t0 goto :null21
+Error("null pointer")
+null21: 
+$t0 = local[1]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[2]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[1]
+out[0] = $t0
+$t0 = in[1]
+out[1] = $t0
+$t1 = local[2]
+call $t1
+local[3] = $v0
+$t0 = in[0]
+local[4] = $t0
+$t0 = 1
+local[5] = $t0
+while1_top: 
+$t0 = local[5]
+if0 $t0 goto :while1_end
+$t0 = local[4]
+if $t0 goto :null22
+Error("null pointer")
+null22: 
+$t0 = local[4]
+$t1 = [$t0]
+local[6] = $t1
+$t0 = local[6]
+$t1 = [$t0+20]
+local[6] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t1 = local[6]
+call $t1
+local[7] = $v0
+$t1 = in[1]
+$t2 = local[7]
+$t0 = LtS($t1 $t2)
+local[8] = $t0
+$t0 = local[8]
+if0 $t0 goto :if3_else
+$t0 = local[4]
+if $t0 goto :null23
+Error("null pointer")
+null23: 
+$t0 = local[4]
+$t1 = [$t0]
+local[9] = $t1
+$t0 = local[9]
+$t1 = [$t0+32]
+local[9] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t1 = local[9]
+call $t1
+local[10] = $v0
+$t0 = local[10]
+if0 $t0 goto :if4_else
+$t0 = local[4]
+if $t0 goto :null24
+Error("null pointer")
+null24: 
+$t0 = local[4]
+$t1 = [$t0]
+local[11] = $t1
+$t0 = local[11]
+$t1 = [$t0+16]
+local[11] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t1 = local[11]
+call $t1
+local[4] = $v0
+goto :if4_end
+if4_else: 
+$t0 = 0
+local[5] = $t0
+$t0 = local[4]
+if $t0 goto :null25
+Error("null pointer")
+null25: 
+$t0 = local[4]
+$t1 = [$t0]
+local[12] = $t1
+$t0 = local[12]
+$t1 = [$t0+36]
+local[12] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t0 = 1
+out[1] = $t0
+$t1 = local[12]
+call $t1
+local[3] = $v0
+$t0 = local[4]
+if $t0 goto :null26
+Error("null pointer")
+null26: 
+$t0 = local[4]
+$t1 = [$t0]
+local[13] = $t1
+$t0 = local[13]
+$t1 = [$t0+8]
+local[13] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t0 = local[1]
+out[1] = $t0
+$t1 = local[13]
+call $t1
+local[3] = $v0
+if4_end: 
+goto :if3_end
+if3_else: 
+$t0 = local[4]
+if $t0 goto :null27
+Error("null pointer")
+null27: 
+$t0 = local[4]
+$t1 = [$t0]
+local[14] = $t1
+$t0 = local[14]
+$t1 = [$t0+28]
+local[14] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t1 = local[14]
+call $t1
+local[15] = $v0
+$t0 = local[15]
+if0 $t0 goto :if5_else
+$t0 = local[4]
+if $t0 goto :null28
+Error("null pointer")
+null28: 
+$t0 = local[4]
+$t1 = [$t0]
+local[16] = $t1
+$t0 = local[16]
+$t1 = [$t0+12]
+local[16] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t1 = local[16]
+call $t1
+local[4] = $v0
+goto :if5_end
+if5_else: 
+$t0 = 0
+local[5] = $t0
+$t0 = local[4]
+if $t0 goto :null29
+Error("null pointer")
+null29: 
+$t0 = local[4]
+$t1 = [$t0]
+local[17] = $t1
+$t0 = local[17]
+$t1 = [$t0+40]
+local[17] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t0 = 1
+out[1] = $t0
+$t1 = local[17]
+call $t1
+local[3] = $v0
+$t0 = local[4]
+if $t0 goto :null30
+Error("null pointer")
+null30: 
+$t0 = local[4]
+$t1 = [$t0]
+local[18] = $t1
+$t0 = local[18]
+$t1 = [$t0+4]
+local[18] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t0 = local[1]
+out[1] = $t0
+$t1 = local[18]
+call $t1
+local[3] = $v0
+if5_end: 
+if3_end: 
+goto :while1_top
+while1_end: 
+$v0 = 1
+ret
+
+func Tree.Delete[in 2, out 3, local 24]
+$t0 = in[0]
+local[0] = $t0
+$t0 = in[0]
+local[1] = $t0
+$t0 = 1
+local[2] = $t0
+$t0 = 0
+local[3] = $t0
+$t0 = 1
+local[4] = $t0
+while2_top: 
+$t0 = local[2]
+if0 $t0 goto :while2_end
+$t0 = local[0]
+if $t0 goto :null31
+Error("null pointer")
+null31: 
+$t0 = local[0]
+$t1 = [$t0]
+local[5] = $t1
+$t0 = local[5]
+$t1 = [$t0+20]
+local[5] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[5]
+call $t1
+local[6] = $v0
+$t1 = in[1]
+$t2 = local[6]
+$t0 = LtS($t1 $t2)
+local[7] = $t0
+$t0 = local[7]
+if0 $t0 goto :if6_else
+$t0 = local[0]
+if $t0 goto :null32
+Error("null pointer")
+null32: 
+$t0 = local[0]
+$t1 = [$t0]
+local[8] = $t1
+$t0 = local[8]
+$t1 = [$t0+32]
+local[8] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[8]
+call $t1
+local[9] = $v0
+$t0 = local[9]
+if0 $t0 goto :if7_else
+$t0 = local[0]
+local[1] = $t0
+$t0 = local[0]
+if $t0 goto :null33
+Error("null pointer")
+null33: 
+$t0 = local[0]
+$t1 = [$t0]
+local[10] = $t1
+$t0 = local[10]
+$t1 = [$t0+16]
+local[10] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[10]
+call $t1
+local[0] = $v0
+goto :if7_end
+if7_else: 
+$t0 = 0
+local[2] = $t0
+if7_end: 
+goto :if6_end
+if6_else: 
+$t1 = local[6]
+$t2 = in[1]
+$t0 = LtS($t1 $t2)
+local[11] = $t0
+$t0 = local[11]
+if0 $t0 goto :if8_else
+$t0 = local[0]
+if $t0 goto :null34
+Error("null pointer")
+null34: 
+$t0 = local[0]
+$t1 = [$t0]
+local[12] = $t1
+$t0 = local[12]
+$t1 = [$t0+28]
+local[12] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[12]
+call $t1
+local[13] = $v0
+$t0 = local[13]
+if0 $t0 goto :if9_else
+$t0 = local[0]
+local[1] = $t0
+$t0 = local[0]
+if $t0 goto :null35
+Error("null pointer")
+null35: 
+$t0 = local[0]
+$t1 = [$t0]
+local[14] = $t1
+$t0 = local[14]
+$t1 = [$t0+12]
+local[14] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[14]
+call $t1
+local[0] = $v0
+goto :if9_end
+if9_else: 
+$t0 = 0
+local[2] = $t0
+if9_end: 
+goto :if8_end
+if8_else: 
+$t0 = local[4]
+if0 $t0 goto :if10_else
+$t0 = local[0]
+if $t0 goto :null36
+Error("null pointer")
+null36: 
+$t0 = local[0]
+$t1 = [$t0]
+local[15] = $t1
+$t0 = local[15]
+$t1 = [$t0+28]
+local[15] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[15]
+call $t1
+local[16] = $v0
+$t1 = local[16]
+$t0 = Sub(1 $t1)
+local[17] = $t0
+$t0 = local[17]
+if0 $t0 goto :ss1_else
+$t0 = local[0]
+if $t0 goto :null37
+Error("null pointer")
+null37: 
+$t0 = local[0]
+$t1 = [$t0]
+local[18] = $t1
+$t0 = local[18]
+$t1 = [$t0+32]
+local[18] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[18]
+call $t1
+local[19] = $v0
+$t1 = local[19]
+$t0 = Sub(1 $t1)
+local[20] = $t0
+goto :ss1_end
+ss1_else: 
+$t0 = 0
+local[20] = $t0
+ss1_end: 
+$t0 = local[20]
+if0 $t0 goto :if11_else
+$t0 = 1
+local[21] = $t0
+goto :if11_end
+if11_else: 
+$t0 = in[0]
+$t1 = [$t0]
+local[22] = $t1
+$t0 = local[22]
+$t1 = [$t0+56]
+local[22] = $t1
+$t0 = in[0]
+out[0] = $t0
+$t0 = local[1]
+out[1] = $t0
+$t0 = local[0]
+out[2] = $t0
+$t1 = local[22]
+call $t1
+local[21] = $v0
+if11_end: 
+goto :if10_end
+if10_else: 
+$t0 = in[0]
+$t1 = [$t0]
+local[23] = $t1
+$t0 = local[23]
+$t1 = [$t0+56]
+local[23] = $t1
+$t0 = in[0]
+out[0] = $t0
+$t0 = local[1]
+out[1] = $t0
+$t0 = local[0]
+out[2] = $t0
+$t1 = local[23]
+call $t1
+local[21] = $v0
+if10_end: 
+$t0 = 1
+local[3] = $t0
+$t0 = 0
+local[2] = $t0
+if8_end: 
+if6_end: 
+$t0 = 0
+local[4] = $t0
+goto :while2_top
+while2_end: 
+$v0 = local[3]
+ret
+
+func Tree.Remove[in 3, out 3, local 21]
+$t0 = in[2]
+if $t0 goto :null38
+Error("null pointer")
+null38: 
+$t0 = in[2]
+$t1 = [$t0]
+local[0] = $t1
+$t0 = local[0]
+$t1 = [$t0+32]
+local[0] = $t1
+$t0 = in[2]
+out[0] = $t0
+$t1 = local[0]
+call $t1
+local[1] = $v0
+$t0 = local[1]
+if0 $t0 goto :if12_else
+$t0 = in[0]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[2]
+$t1 = [$t0+64]
+local[2] = $t1
+$t0 = in[0]
+out[0] = $t0
+$t0 = in[1]
+out[1] = $t0
+$t0 = in[2]
+out[2] = $t0
+$t1 = local[2]
+call $t1
+local[3] = $v0
+goto :if12_end
+if12_else: 
+$t0 = in[2]
+if $t0 goto :null39
+Error("null pointer")
+null39: 
+$t0 = in[2]
+$t1 = [$t0]
+local[4] = $t1
+$t0 = local[4]
+$t1 = [$t0+28]
+local[4] = $t1
+$t0 = in[2]
+out[0] = $t0
+$t1 = local[4]
+call $t1
+local[5] = $v0
+$t0 = local[5]
+if0 $t0 goto :if13_else
+$t0 = in[0]
+$t1 = [$t0]
+local[6] = $t1
+$t0 = local[6]
+$t1 = [$t0+60]
+local[6] = $t1
+$t0 = in[0]
+out[0] = $t0
+$t0 = in[1]
+out[1] = $t0
+$t0 = in[2]
+out[2] = $t0
+$t1 = local[6]
+call $t1
+local[3] = $v0
+goto :if13_end
+if13_else: 
+$t0 = in[2]
+if $t0 goto :null40
+Error("null pointer")
+null40: 
+$t0 = in[2]
+$t1 = [$t0]
+local[7] = $t1
+$t0 = local[7]
+$t1 = [$t0+20]
+local[7] = $t1
+$t0 = in[2]
+out[0] = $t0
+$t1 = local[7]
+call $t1
+local[8] = $v0
+$t0 = in[1]
+if $t0 goto :null41
+Error("null pointer")
+null41: 
+$t0 = in[1]
+$t1 = [$t0]
+local[9] = $t1
+$t0 = local[9]
+$t1 = [$t0+16]
+local[9] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[9]
+call $t1
+local[10] = $v0
+$t0 = local[10]
+if $t0 goto :null42
+Error("null pointer")
+null42: 
+$t0 = local[10]
+$t1 = [$t0]
+local[11] = $t1
+$t0 = local[11]
+$t1 = [$t0+20]
+local[11] = $t1
+$t0 = local[10]
+out[0] = $t0
+$t1 = local[11]
+call $t1
+local[12] = $v0
+$t0 = in[0]
+$t1 = [$t0]
+local[13] = $t1
+$t0 = local[13]
+$t1 = [$t0+44]
+local[13] = $t1
+$t0 = in[0]
+out[0] = $t0
+$t0 = local[8]
+out[1] = $t0
+$t0 = local[12]
+out[2] = $t0
+$t1 = local[13]
+call $t1
+local[14] = $v0
+$t0 = local[14]
+if0 $t0 goto :if14_else
+$t0 = in[1]
+if $t0 goto :null43
+Error("null pointer")
+null43: 
+$t0 = in[1]
+$t1 = [$t0]
+local[15] = $t1
+$t0 = local[15]
+$t1 = [$t0+8]
+local[15] = $t1
+$t0 = in[0]
+$t1 = [$t0+24]
+local[16] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t0 = local[16]
+out[1] = $t0
+$t1 = local[15]
+call $t1
+local[3] = $v0
+$t0 = in[1]
+if $t0 goto :null44
+Error("null pointer")
+null44: 
+$t0 = in[1]
+$t1 = [$t0]
+local[17] = $t1
+$t0 = local[17]
+$t1 = [$t0+36]
+local[17] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t0 = 0
+out[1] = $t0
+$t1 = local[17]
+call $t1
+local[3] = $v0
+goto :if14_end
+if14_else: 
+$t0 = in[1]
+if $t0 goto :null45
+Error("null pointer")
+null45: 
+$t0 = in[1]
+$t1 = [$t0]
+local[18] = $t1
+$t0 = local[18]
+$t1 = [$t0+4]
+local[18] = $t1
+$t0 = in[0]
+$t1 = [$t0+24]
+local[19] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t0 = local[19]
+out[1] = $t0
+$t1 = local[18]
+call $t1
+local[3] = $v0
+$t0 = in[1]
+if $t0 goto :null46
+Error("null pointer")
+null46: 
+$t0 = in[1]
+$t1 = [$t0]
+local[20] = $t1
+$t0 = local[20]
+$t1 = [$t0+40]
+local[20] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t0 = 0
+out[1] = $t0
+$t1 = local[20]
+call $t1
+local[3] = $v0
+if14_end: 
+if13_end: 
+if12_end: 
+$v0 = 1
+ret
+
+func Tree.RemoveRight[in 3, out 2, local 12]
+while3_top: 
+$t0 = in[2]
+if $t0 goto :null47
+Error("null pointer")
+null47: 
+$t0 = in[2]
+$t1 = [$t0]
+local[0] = $t1
+$t0 = local[0]
+$t1 = [$t0+28]
+local[0] = $t1
+$t0 = in[2]
+out[0] = $t0
+$t1 = local[0]
+call $t1
+local[1] = $v0
+$t0 = local[1]
+if0 $t0 goto :while3_end
+$t0 = in[2]
+if $t0 goto :null48
+Error("null pointer")
+null48: 
+$t0 = in[2]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[2]
+$t1 = [$t0+24]
+local[2] = $t1
+$t0 = in[2]
+if $t0 goto :null49
+Error("null pointer")
+null49: 
+$t0 = in[2]
+$t1 = [$t0]
+local[3] = $t1
+$t0 = local[3]
+$t1 = [$t0+12]
+local[3] = $t1
+$t0 = in[2]
+out[0] = $t0
+$t1 = local[3]
+call $t1
+local[4] = $v0
+$t0 = local[4]
+if $t0 goto :null50
+Error("null pointer")
+null50: 
+$t0 = local[4]
+$t1 = [$t0]
+local[5] = $t1
+$t0 = local[5]
+$t1 = [$t0+20]
+local[5] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t1 = local[5]
+call $t1
+local[6] = $v0
+$t0 = in[2]
+out[0] = $t0
+$t0 = local[6]
+out[1] = $t0
+$t1 = local[2]
+call $t1
+local[7] = $v0
+$t0 = in[2]
+in[1] = $t0
+$t0 = in[2]
+if $t0 goto :null51
+Error("null pointer")
+null51: 
+$t0 = in[2]
+$t1 = [$t0]
+local[8] = $t1
+$t0 = local[8]
+$t1 = [$t0+12]
+local[8] = $t1
+$t0 = in[2]
+out[0] = $t0
+$t1 = local[8]
+call $t1
+in[2] = $v0
+goto :while3_top
+while3_end: 
+$t0 = in[1]
+if $t0 goto :null52
+Error("null pointer")
+null52: 
+$t0 = in[1]
+$t1 = [$t0]
+local[9] = $t1
+$t0 = local[9]
+$t1 = [$t0+4]
+local[9] = $t1
+$t0 = in[0]
+$t1 = [$t0+24]
+local[10] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t0 = local[10]
+out[1] = $t0
+$t1 = local[9]
+call $t1
+local[7] = $v0
+$t0 = in[1]
+if $t0 goto :null53
+Error("null pointer")
+null53: 
+$t0 = in[1]
+$t1 = [$t0]
+local[11] = $t1
+$t0 = local[11]
+$t1 = [$t0+40]
+local[11] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t0 = 0
+out[1] = $t0
+$t1 = local[11]
+call $t1
+local[7] = $v0
+$v0 = 1
+ret
+
+func Tree.RemoveLeft[in 3, out 2, local 12]
+while4_top: 
+$t0 = in[2]
+if $t0 goto :null54
+Error("null pointer")
+null54: 
+$t0 = in[2]
+$t1 = [$t0]
+local[0] = $t1
+$t0 = local[0]
+$t1 = [$t0+32]
+local[0] = $t1
+$t0 = in[2]
+out[0] = $t0
+$t1 = local[0]
+call $t1
+local[1] = $v0
+$t0 = local[1]
+if0 $t0 goto :while4_end
+$t0 = in[2]
+if $t0 goto :null55
+Error("null pointer")
+null55: 
+$t0 = in[2]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[2]
+$t1 = [$t0+24]
+local[2] = $t1
+$t0 = in[2]
+if $t0 goto :null56
+Error("null pointer")
+null56: 
+$t0 = in[2]
+$t1 = [$t0]
+local[3] = $t1
+$t0 = local[3]
+$t1 = [$t0+16]
+local[3] = $t1
+$t0 = in[2]
+out[0] = $t0
+$t1 = local[3]
+call $t1
+local[4] = $v0
+$t0 = local[4]
+if $t0 goto :null57
+Error("null pointer")
+null57: 
+$t0 = local[4]
+$t1 = [$t0]
+local[5] = $t1
+$t0 = local[5]
+$t1 = [$t0+20]
+local[5] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t1 = local[5]
+call $t1
+local[6] = $v0
+$t0 = in[2]
+out[0] = $t0
+$t0 = local[6]
+out[1] = $t0
+$t1 = local[2]
+call $t1
+local[7] = $v0
+$t0 = in[2]
+in[1] = $t0
+$t0 = in[2]
+if $t0 goto :null58
+Error("null pointer")
+null58: 
+$t0 = in[2]
+$t1 = [$t0]
+local[8] = $t1
+$t0 = local[8]
+$t1 = [$t0+16]
+local[8] = $t1
+$t0 = in[2]
+out[0] = $t0
+$t1 = local[8]
+call $t1
+in[2] = $v0
+goto :while4_top
+while4_end: 
+$t0 = in[1]
+if $t0 goto :null59
+Error("null pointer")
+null59: 
+$t0 = in[1]
+$t1 = [$t0]
+local[9] = $t1
+$t0 = local[9]
+$t1 = [$t0+8]
+local[9] = $t1
+$t0 = in[0]
+$t1 = [$t0+24]
+local[10] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t0 = local[10]
+out[1] = $t0
+$t1 = local[9]
+call $t1
+local[7] = $v0
+$t0 = in[1]
+if $t0 goto :null60
+Error("null pointer")
+null60: 
+$t0 = in[1]
+$t1 = [$t0]
+local[11] = $t1
+$t0 = local[11]
+$t1 = [$t0+36]
+local[11] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t0 = 0
+out[1] = $t0
+$t1 = local[11]
+call $t1
+local[7] = $v0
+$v0 = 1
+ret
+
+func Tree.Search[in 2, out 1, local 13]
+$t0 = in[0]
+local[0] = $t0
+$t0 = 1
+local[1] = $t0
+$t0 = 0
+local[2] = $t0
+while5_top: 
+$t0 = local[1]
+if0 $t0 goto :while5_end
+$t0 = local[0]
+if $t0 goto :null61
+Error("null pointer")
+null61: 
+$t0 = local[0]
+$t1 = [$t0]
+local[3] = $t1
+$t0 = local[3]
+$t1 = [$t0+20]
+local[3] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[3]
+call $t1
+local[4] = $v0
+$t1 = in[1]
+$t2 = local[4]
+$t0 = LtS($t1 $t2)
+local[5] = $t0
+$t0 = local[5]
+if0 $t0 goto :if15_else
+$t0 = local[0]
+if $t0 goto :null62
+Error("null pointer")
+null62: 
+$t0 = local[0]
+$t1 = [$t0]
+local[6] = $t1
+$t0 = local[6]
+$t1 = [$t0+32]
+local[6] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[6]
+call $t1
+local[7] = $v0
+$t0 = local[7]
+if0 $t0 goto :if16_else
+$t0 = local[0]
+if $t0 goto :null63
+Error("null pointer")
+null63: 
+$t0 = local[0]
+$t1 = [$t0]
+local[8] = $t1
+$t0 = local[8]
+$t1 = [$t0+16]
+local[8] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[8]
+call $t1
+local[0] = $v0
+goto :if16_end
+if16_else: 
+$t0 = 0
+local[1] = $t0
+if16_end: 
+goto :if15_end
+if15_else: 
+$t1 = local[4]
+$t2 = in[1]
+$t0 = LtS($t1 $t2)
+local[9] = $t0
+$t0 = local[9]
+if0 $t0 goto :if17_else
+$t0 = local[0]
+if $t0 goto :null64
+Error("null pointer")
+null64: 
+$t0 = local[0]
+$t1 = [$t0]
+local[10] = $t1
+$t0 = local[10]
+$t1 = [$t0+28]
+local[10] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[10]
+call $t1
+local[11] = $v0
+$t0 = local[11]
+if0 $t0 goto :if18_else
+$t0 = local[0]
+if $t0 goto :null65
+Error("null pointer")
+null65: 
+$t0 = local[0]
+$t1 = [$t0]
+local[12] = $t1
+$t0 = local[12]
+$t1 = [$t0+12]
+local[12] = $t1
+$t0 = local[0]
+out[0] = $t0
+$t1 = local[12]
+call $t1
+local[0] = $v0
+goto :if18_end
+if18_else: 
+$t0 = 0
+local[1] = $t0
+if18_end: 
+goto :if17_end
+if17_else: 
+$t0 = 1
+local[2] = $t0
+$t0 = 0
+local[1] = $t0
+if17_end: 
+if15_end: 
+goto :while5_top
+while5_end: 
+$v0 = local[2]
+ret
+
+func Tree.Print[in 1, out 2, local 3]
+$t0 = in[0]
+local[0] = $t0
+$t0 = in[0]
+$t1 = [$t0]
+local[1] = $t1
+$t0 = local[1]
+$t1 = [$t0+76]
+local[1] = $t1
+$t0 = in[0]
+out[0] = $t0
+$t0 = local[0]
+out[1] = $t0
+$t1 = local[1]
+call $t1
+local[2] = $v0
+$v0 = 1
+ret
+
+func Tree.RecPrint[in 2, out 2, local 13]
+$t0 = in[1]
+if $t0 goto :null66
+Error("null pointer")
+null66: 
+$t0 = in[1]
+$t1 = [$t0]
+local[0] = $t1
+$t0 = local[0]
+$t1 = [$t0+32]
+local[0] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[0]
+call $t1
+local[1] = $v0
+$t0 = local[1]
+if0 $t0 goto :if19_else
+$t0 = in[0]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[2]
+$t1 = [$t0+76]
+local[2] = $t1
+$t0 = in[1]
+if $t0 goto :null67
+Error("null pointer")
+null67: 
+$t0 = in[1]
+$t1 = [$t0]
+local[3] = $t1
+$t0 = local[3]
+$t1 = [$t0+16]
+local[3] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[3]
+call $t1
+local[4] = $v0
+$t0 = in[0]
+out[0] = $t0
+$t0 = local[4]
+out[1] = $t0
+$t1 = local[2]
+call $t1
+local[5] = $v0
+goto :if19_end
+if19_else: 
+$t0 = 1
+local[5] = $t0
+if19_end: 
+$t0 = in[1]
+if $t0 goto :null68
+Error("null pointer")
+null68: 
+$t0 = in[1]
+$t1 = [$t0]
+local[6] = $t1
+$t0 = local[6]
+$t1 = [$t0+20]
+local[6] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[6]
+call $t1
+local[7] = $v0
+$t1 = local[7]
+PrintIntS($t1)
+$t0 = in[1]
+if $t0 goto :null69
+Error("null pointer")
+null69: 
+$t0 = in[1]
+$t1 = [$t0]
+local[8] = $t1
+$t0 = local[8]
+$t1 = [$t0+28]
+local[8] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[8]
+call $t1
+local[9] = $v0
+$t0 = local[9]
+if0 $t0 goto :if20_else
+$t0 = in[0]
+$t1 = [$t0]
+local[10] = $t1
+$t0 = local[10]
+$t1 = [$t0+76]
+local[10] = $t1
+$t0 = in[1]
+if $t0 goto :null70
+Error("null pointer")
+null70: 
+$t0 = in[1]
+$t1 = [$t0]
+local[11] = $t1
+$t0 = local[11]
+$t1 = [$t0+12]
+local[11] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[11]
+call $t1
+local[12] = $v0
+$t0 = in[0]
+out[0] = $t0
+$t0 = local[12]
+out[1] = $t0
+$t1 = local[10]
+call $t1
+local[5] = $v0
+goto :if20_end
+if20_else: 
+$t0 = 1
+local[5] = $t0
+if20_end: 
+$v0 = 1
+ret
+
+func Tree.accept[in 2, out 2, local 2]
+PrintIntS(333)
+$t0 = in[1]
+if $t0 goto :null71
+Error("null pointer")
+null71: 
+$t0 = in[1]
+$t1 = [$t0]
+local[0] = $t1
+$t0 = local[0]
+$t1 = [$t0]
+local[0] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t0 = in[0]
+out[1] = $t0
+$t1 = local[0]
+call $t1
+local[1] = $v0
+$v0 = 0
+ret
+
+func Visitor.visit[in 2, out 2, local 13]
+$t0 = in[1]
+if $t0 goto :null72
+Error("null pointer")
+null72: 
+$t0 = in[1]
+$t1 = [$t0]
+local[0] = $t1
+$t0 = local[0]
+$t1 = [$t0+28]
+local[0] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[0]
+call $t1
+local[1] = $v0
+$t0 = local[1]
+if0 $t0 goto :if21_else
+$t0 = in[1]
+if $t0 goto :null73
+Error("null pointer")
+null73: 
+$t0 = in[1]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[2]
+$t1 = [$t0+12]
+local[2] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[2]
+call $t1
+local[3] = $v0
+$t0 = in[0]
+$t1 = local[3]
+[$t0+8] = $t1
+$t0 = in[0]
+$t1 = [$t0+8]
+local[4] = $t1
+$t0 = local[4]
+if $t0 goto :null74
+Error("null pointer")
+null74: 
+$t0 = local[4]
+$t1 = [$t0]
+local[5] = $t1
+$t0 = local[5]
+$t1 = [$t0+80]
+local[5] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t0 = in[0]
+out[1] = $t0
+$t1 = local[5]
+call $t1
+local[6] = $v0
+goto :if21_end
+if21_else: 
+$t0 = 0
+local[6] = $t0
+if21_end: 
+$t0 = in[1]
+if $t0 goto :null75
+Error("null pointer")
+null75: 
+$t0 = in[1]
+$t1 = [$t0]
+local[7] = $t1
+$t0 = local[7]
+$t1 = [$t0+32]
+local[7] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[7]
+call $t1
+local[8] = $v0
+$t0 = local[8]
+if0 $t0 goto :if22_else
+$t0 = in[1]
+if $t0 goto :null76
+Error("null pointer")
+null76: 
+$t0 = in[1]
+$t1 = [$t0]
+local[9] = $t1
+$t0 = local[9]
+$t1 = [$t0+16]
+local[9] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[9]
+call $t1
+local[10] = $v0
+$t0 = in[0]
+$t1 = local[10]
+[$t0+4] = $t1
+$t0 = in[0]
+$t1 = [$t0+4]
+local[11] = $t1
+$t0 = local[11]
+if $t0 goto :null77
+Error("null pointer")
+null77: 
+$t0 = local[11]
+$t1 = [$t0]
+local[12] = $t1
+$t0 = local[12]
+$t1 = [$t0+80]
+local[12] = $t1
+$t0 = local[11]
+out[0] = $t0
+$t0 = in[0]
+out[1] = $t0
+$t1 = local[12]
+call $t1
+local[6] = $v0
+goto :if22_end
+if22_else: 
+$t0 = 0
+local[6] = $t0
+if22_end: 
+$v0 = 0
+ret
+
+func MyVisitor.visit[in 2, out 2, local 15]
+$t0 = in[1]
+if $t0 goto :null78
+Error("null pointer")
+null78: 
+$t0 = in[1]
+$t1 = [$t0]
+local[0] = $t1
+$t0 = local[0]
+$t1 = [$t0+28]
+local[0] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[0]
+call $t1
+local[1] = $v0
+$t0 = local[1]
+if0 $t0 goto :if23_else
+$t0 = in[1]
+if $t0 goto :null79
+Error("null pointer")
+null79: 
+$t0 = in[1]
+$t1 = [$t0]
+local[2] = $t1
+$t0 = local[2]
+$t1 = [$t0+12]
+local[2] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[2]
+call $t1
+local[3] = $v0
+$t0 = in[0]
+$t1 = local[3]
+[$t0+8] = $t1
+$t0 = in[0]
+$t1 = [$t0+8]
+local[4] = $t1
+$t0 = local[4]
+if $t0 goto :null80
+Error("null pointer")
+null80: 
+$t0 = local[4]
+$t1 = [$t0]
+local[5] = $t1
+$t0 = local[5]
+$t1 = [$t0+80]
+local[5] = $t1
+$t0 = local[4]
+out[0] = $t0
+$t0 = in[0]
+out[1] = $t0
+$t1 = local[5]
+call $t1
+local[6] = $v0
+goto :if23_end
+if23_else: 
+$t0 = 0
+local[6] = $t0
+if23_end: 
+$t0 = in[1]
+if $t0 goto :null81
+Error("null pointer")
+null81: 
+$t0 = in[1]
+$t1 = [$t0]
+local[7] = $t1
+$t0 = local[7]
+$t1 = [$t0+20]
+local[7] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[7]
+call $t1
+local[8] = $v0
+$t1 = local[8]
+PrintIntS($t1)
+$t0 = in[1]
+if $t0 goto :null82
+Error("null pointer")
+null82: 
+$t0 = in[1]
+$t1 = [$t0]
+local[9] = $t1
+$t0 = local[9]
+$t1 = [$t0+32]
+local[9] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[9]
+call $t1
+local[10] = $v0
+$t0 = local[10]
+if0 $t0 goto :if24_else
+$t0 = in[1]
+if $t0 goto :null83
+Error("null pointer")
+null83: 
+$t0 = in[1]
+$t1 = [$t0]
+local[11] = $t1
+$t0 = local[11]
+$t1 = [$t0+16]
+local[11] = $t1
+$t0 = in[1]
+out[0] = $t0
+$t1 = local[11]
+call $t1
+local[12] = $v0
+$t0 = in[0]
+$t1 = local[12]
+[$t0+4] = $t1
+$t0 = in[0]
+$t1 = [$t0+4]
+local[13] = $t1
+$t0 = local[13]
+if $t0 goto :null84
+Error("null pointer")
+null84: 
+$t0 = local[13]
+$t1 = [$t0]
+local[14] = $t1
+$t0 = local[14]
+$t1 = [$t0+80]
+local[14] = $t1
+$t0 = local[13]
+out[0] = $t0
+$t0 = in[0]
+out[1] = $t0
+$t1 = local[14]
+call $t1
+local[6] = $v0
+goto :if24_end
+if24_else: 
+$t0 = 0
+local[6] = $t0
+if24_end: 
+$v0 = 0
+ret
+

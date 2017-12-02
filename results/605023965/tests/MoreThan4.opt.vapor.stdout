@@ -1,0 +1,73 @@
+const empty_MT4
+
+func Main[in 0, out 7, local 1]
+$t0 = :empty_MT4
+out[0] = $t0
+$t0 = 1
+out[1] = $t0
+$t0 = 2
+out[2] = $t0
+$t0 = 3
+out[3] = $t0
+$t0 = 4
+out[4] = $t0
+$t0 = 5
+out[5] = $t0
+$t0 = 6
+out[6] = $t0
+$t1 = :MT4.Start
+call $t1
+local[0] = $v0
+$t1 = local[0]
+PrintIntS($t1)
+ret
+
+func MT4.Start[in 7, out 7, local 1]
+$t1 = in[1]
+PrintIntS($t1)
+$t1 = in[2]
+PrintIntS($t1)
+$t1 = in[3]
+PrintIntS($t1)
+$t1 = in[4]
+PrintIntS($t1)
+$t1 = in[5]
+PrintIntS($t1)
+$t1 = in[6]
+PrintIntS($t1)
+$t0 = in[0]
+out[0] = $t0
+$t0 = in[6]
+out[1] = $t0
+$t0 = in[5]
+out[2] = $t0
+$t0 = in[4]
+out[3] = $t0
+$t0 = in[3]
+out[4] = $t0
+$t0 = in[2]
+out[5] = $t0
+$t0 = in[1]
+out[6] = $t0
+$t1 = :MT4.Change
+call $t1
+local[0] = $v0
+$v0 = local[0]
+ret
+
+func MT4.Change[in 7, out 0, local 0]
+$t1 = in[1]
+PrintIntS($t1)
+$t1 = in[2]
+PrintIntS($t1)
+$t1 = in[3]
+PrintIntS($t1)
+$t1 = in[4]
+PrintIntS($t1)
+$t1 = in[5]
+PrintIntS($t1)
+$t1 = in[6]
+PrintIntS($t1)
+$v0 = 0
+ret
+
