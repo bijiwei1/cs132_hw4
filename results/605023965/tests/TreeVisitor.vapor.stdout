@@ -27,6 +27,7 @@ const vmt_Visitor
 const vmt_MyVisitor
   :MyVisitor.visit
 
+
 func Main[in 0, out 1, local 3]
 $t0 = HeapAllocZ(4)
 local[0] = $t0
@@ -1961,4 +1962,3 @@ local[6] = $t0
 if24_end: 
 $v0 = 0
 ret
-

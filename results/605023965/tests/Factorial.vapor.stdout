@@ -1,6 +1,7 @@
 const vmt_Fac
   :Fac.ComputeFac
 
+
 func Main[in 0, out 2, local 3]
 $t0 = HeapAllocZ(4)
 local[0] = $t0
@@ -61,4 +62,3 @@ local[1] = $t0
 if1_end: 
 $v0 = local[1]
 ret
-

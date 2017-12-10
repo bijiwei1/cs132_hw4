@@ -1,5 +1,6 @@
 const empty_BBS
 
+
 func Main[in 0, out 2, local 2]
 $t0 = HeapAllocZ(8)
 local[0] = $t0
@@ -612,4 +613,3 @@ $t1 = in[0]
 [$t0] = $t1
 $v0 = local[1]
 ret
-

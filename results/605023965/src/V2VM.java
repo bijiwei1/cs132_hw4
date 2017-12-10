@@ -28,6 +28,8 @@ public class V2VM{
 
 			System.out.println("");
 
+			LinkedList<Func_env> all_funcs = new LinkedList<Func_env>();
+
 			for (VFunction func: program.functions){
 
 				Func_env fe = new Func_env(func); 
@@ -56,7 +58,6 @@ public class V2VM{
 				for (int i = 0; i < func.labels.length; i++) {
 					System.out.println("Label " + func.labels[i].ident + "at " + func.labels[i].instrIndex);
 				}*/
-
 				V2VM_visitor vvistor = new V2VM_visitor(fe);
 				for (VInstr instr: func.body) {
 					//check if reach the label line
@@ -69,14 +70,34 @@ public class V2VM{
 					try {
 						instr.accept(vvistor); 
 					}catch (Throwable t) {
-					System.out.println("Failed to parse current instruction");
+						System.out.println("Failed to parse current instruction");
 					}
 				}
 
-				System.out.print("func " + func.ident +  "[in " + fe.params.size() + ", out " 
-								+ fe.out_num + ", local "+ fe.stack_num +"]"); 
+				//finally print out all codes
+				/*System.out.print("func " + func.ident +  "[in " + fe.params.size() + ", out " 
+								+ fe.out_num + ", local "+ fe.getStackNum() +"]"); 
 				System.out.println(fe.message);
+				System.out.println("");*/
+				/*
+				fe.addToBegin("func " + func.ident +  "[in " + fe.params.size() + ", out " 
+								+ fe.out_num + ", local "+ fe.getStackNum() +"]");
+				fe.addMessg("");
+				*/
+
+				all_funcs.add(fe); 
+			}
+
+			//Allocate all data to as many register as possible
+			//RegAllocation(all_funcs); 
+
+			//Print out all codes
+			for (Func_env fe: all_funcs){
+				fe.addToBegin("func " + fe.func_name +  "[in " + fe.params.size() + ", out " 
+								+ fe.out_num + ", local "+ fe.getStackNum() +"]");
+			
 				System.out.println("");
+				System.out.println(fe.message);
 			}
 
 		}catch (IOException ex) {
@@ -106,6 +127,74 @@ public class V2VM{
   		}
 
   		return program;
+	}
+
+	public static void RegAllocation(LinkedList<Func_env> all_funcs){
+
+		//Collect all information needed for register allocation
+		for (Func_env fe: all_funcs){
+			String code = fe.message;
+			String lines[] = code.split("\\r?\\n");
+			for (int i = 1; i < lines.length; i ++){
+				String left; 
+				String right;
+
+				if (lines[i].contains("=")){
+					String tmp[] = lines[i].split(" = ");
+					if (tmp[0].contains("local")){
+						left = tmp[0]; 
+						fe.getVarLeft(left, i);
+					}
+					if (tmp[1].contains("local")){
+						right = tmp[1]; 
+						fe.getVarRight(right, i);
+					}
+				}
+
+				if (lines[i].contains("vmt")){
+					String tmp[] = lines[i].split("vmt_");
+					fe.addSubCall(tmp[1]); 
+				}
+
+				if (lines[i].contains("call")){
+					fe.addSubCall("tmp ");
+				}
+			}
+
+			/*
+			System.out.println("Function " + fe.func_name);
+			fe.printVarPos();
+			fe.printSubCall();
+			*/
+		}
+
+		int avail_reg = 2; 
+
+		//Assign register now
+		for (Func_env fe: all_funcs){
+
+			//Assign register to bottom-level function first ($t2 - $t8)
+			if (fe.sub_call.size() == 0){
+				avail_reg = 2; 
+				int var_num = fe.var_left.size();
+				int begin = 0;
+				int end = 0;
+				if (avail_reg + var_num <= 9){
+					begin = avail_reg;
+					end = avail_reg + var_num - 1;
+				}else {
+					begin = avail_reg;
+					end = 8;
+				}
+				fe.assignReg(begin, end);
+				//System.out.println("Assigned bottom-level function" + fe.func_name + " begin: " + begin + " end: "  + end);
+				
+				//Update the stack(local) with register
+				fe.localToreg(); 
+			}
+
+		}
+
 	}
 
 }

@@ -2,6 +2,7 @@ const vmt_MT4
   :MT4.Start
   :MT4.Change
 
+
 func Main[in 0, out 7, local 3]
 $t0 = HeapAllocZ(4)
 local[0] = $t0
@@ -93,4 +94,3 @@ $t1 = in[6]
 PrintIntS($t1)
 $v0 = 0
 ret
-

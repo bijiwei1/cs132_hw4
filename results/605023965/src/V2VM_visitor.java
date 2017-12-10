@@ -9,6 +9,7 @@ public class V2VM_visitor extends VInstr.Visitor<Throwable>{
 		fe = curr_func;
 	}
 
+	//Note: $t0 and $t1 is reserved to do all instruction translation as tmp register
 	public void visit(VAssign a) throws Throwable{
 	/*
 		dest (local var, reg) = source (param, local var, reg, constant)
@@ -201,4 +202,5 @@ public class V2VM_visitor extends VInstr.Visitor<Throwable>{
 		String l2 = "ret";
 		fe.addMessg(l2);
 	}
+
 }

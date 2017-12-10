@@ -1,5 +1,6 @@
 const empty_MT4
 
+
 func Main[in 0, out 7, local 1]
 $t0 = :empty_MT4
 out[0] = $t0
@@ -70,4 +71,3 @@ $t1 = in[6]
 PrintIntS($t1)
 $v0 = 0
 ret
-
